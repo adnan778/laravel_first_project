@@ -29,8 +29,7 @@
                       <img id="picture" class="rounded-circle" src="/{{$users->image}}" alt="User Avatar" width="110"> </div>
                     <h4 class="mb-0">{{$users->name}}</h4>
                     <span class="text-muted d-block mb-2">Project Manager</span>
-                    <button type="button" class="mb-2 btn btn-sm btn-pill btn-outline-primary mr-2">
-                      <i class="material-icons mr-1">person_add</i>Follow</button>
+                 
                   </div>
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item px-4">
