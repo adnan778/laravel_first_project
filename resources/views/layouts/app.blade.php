@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" id="main-stylesheet" data-version="1.1.0" href="/styles/shards-dashboards.1.1.0.min.css">
     <link rel="stylesheet" href="/styles/extras.1.1.0.min.css">
-    
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+<!--===============================================================================================-->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </head>
   <body class="h-100">
@@ -62,9 +64,7 @@
         <i class="material-icons">close</i>
       </div>
     </div>
-    <div class="color-switcher-toggle animated pulse infinite">
-      <i class="material-icons">settings</i>
-    </div>
+    
     <div class="container-fluid">
       <div class="row">
       @include('layouts.back.sideber')
@@ -155,5 +155,9 @@
     <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
     <script src="scripts/app/app-blog-overview.1.1.0.js"></script>
     <script src="path/to/dist/jquery.facedetection.min.js"></script>
+
+<!-- login form jslink -->
+
+
   </body>
 </html>

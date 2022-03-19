@@ -40,8 +40,13 @@ Route::get('newPostAdd',[HomeController::class,'newPostAdd'])->name('newPostAdd'
 Route::post('addBlogPost',[BlogPost::class,'abpost'])->name('insert.blog');
 
 
-// viewdata
-Route::get('viewdata',[BlogPost::class,'viewdata'])->name('viewdata');
+
+
+
+
+// change passwod page
+Route::get('change-Password',[BlogPost::class,'changePassword'])->name('changePassword');
+Route::post('change-Password',[BlogPost::class,'updatePassword'])->name('updatePassword');
 
 Auth::routes();
 

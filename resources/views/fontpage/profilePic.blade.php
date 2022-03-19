@@ -4,6 +4,16 @@
 <div class="row">
     <div class="col-lg-4"></div>
               <div class="col-lg-4">
+              @if(Session::has('success'))
+          <div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                      <i class="fa fa-check mx-2"></i>
+                      <strong>Success!</strong>{{ Session::get('success') }}
+                    
+          </div>
+          @endif
                 <div class="card card-small mb-4 pt-3">
                   <div class="card-header border-bottom text-center">
                     <div class="mb-3 mx-auto">

@@ -57,6 +57,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'phone' => ['required','regex:/(01)[0-9]{9}$/'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'g-recaptcha-response' => 'required|recaptcha'
             
         ]);
     }
@@ -72,14 +73,13 @@ class RegisterController extends Controller
 
         $file_extention = $data['image']->getClientOriginalExtension();
         $file_name = time().rand(99,999).'image.'.$file_extention;
-  $file_path = $data['image'];
+       $file_path = $data['image'];
 
 
 
 
         $file_path =Image::make($file_path)->resize(300, 200);
-
-        $file_path->save($file_name);
+        $file_path->save(public_path('Nfolder'),$file_name);
 
         return User::create([
             'name' => $data['name'],

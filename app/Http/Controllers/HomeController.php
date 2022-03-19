@@ -8,6 +8,7 @@ use App\Models\user;
 use App\Models\Blog;
 use Illuminate\Support\Facades\Auth;
 use Image;
+use Illuminate\Support\Facades\Session;
 class HomeController extends Controller
 {
     /**
@@ -49,18 +50,19 @@ class HomeController extends Controller
             $data->name=$request->name;
             $data->email=$request->email;
             $data->phone=$request->phone;
-            $data->age=$request->age;
             $data->date=$request->date;
             $data->gander=$request->gander;
             // $data->image=$file_path;
             $data->update();
+            Session::flash('success',' Your profile has been updated! ');
         
-            return redirect()->route('home');
+            return redirect()->route('profile');
     }
 
     // profileChange
     public function profileChange()
     {
+
         $profilePic = DB::table('users')->where('id',Auth::user()->id)->first();
         
         return view('fontpage.profilePic')->with('users', $profilePic);
@@ -83,7 +85,7 @@ class HomeController extends Controller
             $data=user::find(Auth::user()->id);
             $data->image=$file_name;
             $data->update();
-        
+            Session::flash('success',' Your profile Picture has been Changed! ');
             return redirect()->route('changeProfilePicture');
     }
     public function newPostAdd()
